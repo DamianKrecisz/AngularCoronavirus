@@ -1102,7 +1102,7 @@ let ApiService = class ApiService {
     getNews() {
         var rightNow = new Date();
         var res = rightNow.toISOString().slice(0, 10).replace(/-/g, "-");
-        return this.http.get("http://newsapi.org/v2/everything?q=coronavirus&from=" + res + "&sortBy=publishedAt&apiKey=0477f360c5c7421e995f0f382401bc21");
+        return this.http.get("https://newsapi.org/v2/everything?q=coronavirus&from=" + res + "&sortBy=publishedAt&apiKey=0477f360c5c7421e995f0f382401bc21");
     }
     getCountryTimeline(myValue) {
         return this.http.get(this.baseUrl + "/free-api?countryTimeline=" + myValue);
