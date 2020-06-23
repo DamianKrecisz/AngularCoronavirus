@@ -25,9 +25,11 @@
     "chart.js": "^2.9.3",
     "chartjs-plugin-annotation": "^0.5.7",
     "deploy": "^1.0.3",
+    "express": "^4.17.1",
     "ng2-charts": "^2.3.2",
     "ngx-deploy-npm": "^1.2.2",
     "ngx-gh": "0.0.2",
+    "path": "^0.12.7",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
