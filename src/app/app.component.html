@@ -1,0 +1,96 @@
+<!--<app-my-bar-chart></app-my-bar-chart>
+  <app-my-doughnut-chart></app-my-doughnut-chart>
+  <app-my-radar-chart></app-my-radar-chart>
+  <app-my-pie-chart></app-my-pie-chart>
+-->
+<div class="main row">
+
+  <div class="column col-lg-2 col-md-6 ">
+    <div class="total_confirmed-number mt-2 mb-2 ml-2 mr-1 ">
+      Total Confirmed:
+      <p>{{TotalConfirmed |number}}</p>
+    </div>
+    <div class="total_confirmed-table mb-2 ml-2 mr-1">
+      <p>
+        Sort by total:
+      </p>
+      <div class="button_sortBy">
+        <button type="button" class="btn btn-dark" (click)="showDeathsStats()">Deaths</button>
+        <button type="button" class="btn btn-dark" (click)="showConfirmedStats()">Confirmed</button>
+        <button type="button" class="btn btn-dark" (click)="showRecoveredStats()">Recovered</button>
+      </div>
+
+      <div *ngIf="showDeaths">
+        <div class="dataSortTable" *ngFor="let item of dataDeaths">
+          <span>
+            {{item.total_deaths |number}}
+          </span>
+          {{item.title}}
+        </div>
+      </div>
+      <div *ngIf="showConfirmed">
+        <div class="data" *ngFor="let item of dataConfirmed">
+          <span>
+            {{item.total_cases |number}}
+          </span>
+          {{item.title}}
+        </div>
+      </div>
+      <div *ngIf="showRecovered">
+        <div class="data" *ngFor="let item of dataRecovered">
+          <span>
+            {{item.total_recovered |number}}
+          </span>
+          {{item.title}}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="column col-lg-8 col-md-12 order-md-12">
+    <div class="select_country mt-2 mb-2 ml-1 mr-1">
+      <app-select-country></app-select-country>
+    </div>
+    <div class="charts mb-2 ml-1 mr-1">
+      <div class="select_chart">
+        <button class="btn btn-dark" (click)="showDailyChart()">Daily stats</button>
+        <button class="btn btn-dark" (click)="showTotalChart()">Total stats</button>
+      </div>
+      <app-daily-chart *ngIf="dailyChart"></app-daily-chart>
+      <app-chart *ngIf="totalChart"></app-chart>
+    </div>
+  </div>
+
+  <div class="column col-lg-2 col-md-6 order-lg-last">
+
+    <div class="globalStats mt-2 mb-2 mr-2 ml-1">
+      <div class="globalStats_block mr-1">
+        Total Deaths:
+        <p>{{TotalDeaths |number}}</p>
+      </div>
+      <div class="globalStats_block ml-1">
+        Total Recovered:
+        <p>{{TotalRecovered |number}}</p>
+      </div>
+    </div>
+    <div class="news mb-2 mr-2 ml-1">
+      <div class="news_container" *ngFor="let item of news">
+        <a href="{{item.url}}">
+
+          <div class="news_date">
+            <span> {{item.source.name}}</span>
+            <span> {{item.publishedAt | date  }} </span>
+          </div>
+
+          <div class="news_title">
+            {{item.title}}
+          </div>
+          
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</div>

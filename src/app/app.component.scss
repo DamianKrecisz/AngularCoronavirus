@@ -1,0 +1,194 @@
+$block-color:#222222;
+$color-1: rgb(56, 56, 56);
+$font-size-0: 0.9em;
+$font-size-1: 1.2em;
+$font-size-2: 1.5vw;
+$height-first:13%;
+$height-last: 87%;
+$border: 2px $color-1 solid;
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url(src/assets/fonts/Montserrat-Regular.ttf) format("opentype");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat';
+  list-style: none;
+}
+
+button {
+  color: white;
+  background-color: black
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  color: white;
+}
+
+.column {
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+@media all and (max-width: 768px) {
+  .column {
+    max-height: 93vh ;
+    display: flex;
+    flex-direction: column;
+  }
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #bbbbbb;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.total_confirmed {
+
+  &-number {
+    height: $height-first;
+    background-color: $block-color;
+    border: 2px rgb(56, 56, 56) solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      font-size: $font-size-2;
+      color: red;
+      font-weight: 800;
+    }
+  }
+
+  
+  &-table {
+    height: $height-last;
+    background-color: $block-color;
+    border: 2px rgb(56, 56, 56) solid;
+    overflow: auto;
+    padding: 2%;
+
+    span {
+      font-size: $font-size-1;
+      color: red;
+    }
+
+    p {
+      text-align: center;
+    }
+
+
+  }
+
+}
+
+.select_country {
+  height: $height-first;
+  background-color: $block-color;
+  border: $border;
+}
+
+.button_sortBy {
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    width: 33%;
+  }
+}
+
+.select_chart {
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    width: 49%;
+    margin:2% 0%;
+  }
+}
+
+.dataSortTable {
+  border-bottom: $border;
+}
+
+.charts {
+  height: $height-last;
+  background-color: $block-color;
+  border: $border;
+  padding: 1%;
+}
+
+
+.globalStats {
+  height: $height-first;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    font-size: $font-size-2;
+    color: red;
+    font-weight: 800;
+  }
+
+  &_block {
+    width: 50%;
+    background-color: $block-color;
+    border: $border;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.news {
+  height: $height-last;
+  font-size: $font-size-0;
+  background-color: $block-color;
+  border: $border;
+  padding: 2%;
+  overflow: auto;
+
+  a {
+    color: white;
+  }
+
+  &_date {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 800;
+  }
+
+  &_container {
+    border-bottom: $border;
+  }
+
+}
+
+@media all and (max-width: 768px) {
+  p {
+    font-size: 3vh !important
+  }
+}

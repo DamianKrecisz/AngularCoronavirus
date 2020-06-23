@@ -1,0 +1,16 @@
+<div class="flex">
+  <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+    [colors]="lineChartColors"  [chartType]="lineChartType" >
+  </canvas>
+</div>
+
+<div class="total_info">
+  <div>
+    Total Deaths: 
+    <span> {{tDeaths}}</span>
+  </div>
+  <div>
+    Total Confirmed:
+    <span>{{tConfirmed}}</span>
+  </div>
+</div>

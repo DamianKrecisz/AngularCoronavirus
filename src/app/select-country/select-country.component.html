@@ -1,0 +1,6 @@
+<select class="custom-select" (click)="showEvent($event.target.value)">
+  <option [value]="undefined" disabled selected> Please select country </option>
+
+  <option *ngFor="let country of countries" [value]="country.code" placeholder="Select your country">{{country.title}}
+  </option>
+</select>
