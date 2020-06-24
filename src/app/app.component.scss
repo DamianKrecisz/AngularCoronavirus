@@ -1,6 +1,6 @@
 $block-color:#222222;
 $color-1: rgb(56, 56, 56);
-$font-size-0: 0.9em;
+$font-size-0: 0.8em;
 $font-size-1: 1.2em;
 $font-size-2: 1.5vw;
 $height-first:13%;
@@ -128,7 +128,7 @@ button {
   }
 }
 
-.dataSortTable {
+.data {
   border-bottom: $border;
 }
 
@@ -170,7 +170,6 @@ button {
   border: $border;
   padding: 2%;
   overflow: auto;
-
   a {
     color: white;
   }
@@ -178,9 +177,17 @@ button {
   &_date {
     display: flex;
     justify-content: space-between;
-    font-weight: 800;
+    margin-top:0.5rem;
+    span{
+      width:70%;
+    }
+    p{
+      font-weight: 800;
+      width:30%;
+      
+    }
+    margin-bottom:0.5rem;
   }
-
   &_container {
     border-bottom: $border;
   }

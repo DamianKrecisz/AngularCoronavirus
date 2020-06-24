@@ -29,13 +29,10 @@ export class AppComponent {
 
   ngOnInit() {
 
-    
+
     var rightNow = new Date();
-    var res = rightNow.toISOString().slice(0,10).replace(/-/g,"-");
+    var res = rightNow.toISOString().slice(0, 10).replace(/-/g, "-");
     console.log(res)
-
-
-
 
     this.api.getTotalStats().subscribe(data => {
       this.Totalresult = data;
@@ -62,12 +59,22 @@ export class AppComponent {
       });
     });
 
+    this.api.dataApi().subscribe(data => {
+      console.log(data);
+      //this.news = [data];
+      for (let i = 1; i < Object.keys(data).length; i++) {
+        this.news[this.news.length] = data[i];
+      };
+      console.log(this.news)
+    })
+
     this.api.getNews().subscribe(data => {
-      this.dataNews = [data];
+      /*this.dataNews = [data];
       this.rowsNews = this.dataNews[0].articles;
       for (let i = 1; i < Object.keys(this.rowsNews).length; i++) {
         this.news[this.news.length] = this.rowsNews[i];
       };
+      console.log(this.news)*/
     });
 
   }

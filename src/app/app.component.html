@@ -21,7 +21,7 @@
       </div>
 
       <div *ngIf="showDeaths">
-        <div class="dataSortTable" *ngFor="let item of dataDeaths">
+        <div class="data" *ngFor="let item of dataDeaths">
           <span>
             {{item.total_deaths |number}}
           </span>
@@ -75,17 +75,15 @@
       </div>
     </div>
     <div class="news mb-2 mr-2 ml-1">
+
       <div class="news_container" *ngFor="let item of news">
         <a href="{{item.url}}">
 
           <div class="news_date">
-            <span> {{item.source.name}}</span>
-            <span> {{item.publishedAt | date  }} </span>
+            <span> {{item.title}}</span>
+            <p>  {{item.discoverDate | date  }} </p>
           </div>
 
-          <div class="news_title">
-            {{item.title}}
-          </div>
           
         </a>
       </div>
