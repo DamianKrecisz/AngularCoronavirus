@@ -30,7 +30,7 @@ export class ApiService {
       .set("Authorization", "sBBqsGXiYgF0Db5OV5tAw-SjUjEMF7y1YwvnLKcLl_PZ61kwIF7KXWeVoAvy-CgEn2pHZrSf1gT2PUujH1YaQA")
   }
 
-  dataApi() {
+  apiNews() {
     return this.http.get("https://api.newsriver.io/v2/search?query=title%3Acoronavirus%20OR%20text%3Acoronavirus&sortBy=discoverDate&sortOrder=DESC&limit=15", this.header);
 
   }
