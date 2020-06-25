@@ -1,6 +1,6 @@
 # AngularCoronavirus
- Angular application with api services
- 
+Angular application showing work with data from external API. Charts created in the chart.js library
+
  Live: https://angularcoronavirus.herokuapp.com/
  
  Screenshot:
